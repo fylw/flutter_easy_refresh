@@ -66,13 +66,13 @@ class _CupertinoIndicatorPageState extends State<CupertinoIndicatorPage> {
           right: false,
           child: EasyRefresh(
             controller: _controller,
-            header: const CupertinoHeader(
-              position: IndicatorPosition.locator,
-              safeArea: false,
-            ),
-            footer: const CupertinoFooter(
-              position: IndicatorPosition.locator,
-            ),
+            // header: const CupertinoHeader(
+            //   position: IndicatorPosition.locator,
+            //   safeArea: false,
+            // ),
+            // footer: const CupertinoFooter(
+            //   position: IndicatorPosition.locator,
+            // ),
             onRefresh: () async {
               await Future.delayed(const Duration(seconds: 2));
               if (!mounted) {

@@ -453,7 +453,8 @@ class _ERScrollPhysics extends BouncingScrollPhysics {
             footerNotifier._mode == IndicatorMode.secondaryOpen);
     bool secondary = hSecondary || fSecondary;
     if (velocity.abs() >= tolerance.velocity ||
-        (oldMaxScrollExtent != position.maxScrollExtent &&
+        ((IndicatorMode.inactive != headerNotifier.mode ||
+        IndicatorMode.inactive != footerNotifier.mode) &&
             position.maxScrollExtent != 0) ||
         (position.outOfRange || (secondary && oldUserOffset)) &&
             (oldUserOffset ||

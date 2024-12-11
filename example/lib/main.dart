@@ -31,25 +31,32 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
 
   @override
   void initState() {
-    EasyRefresh.defaultHeaderBuilder = () => ClassicHeader(
-          dragText: 'Pull to refresh'.tr,
-          armedText: 'Release ready'.tr,
-          readyText: 'Refreshing...'.tr,
-          processingText: 'Refreshing...'.tr,
-          processedText: 'Succeeded'.tr,
-          noMoreText: 'No more'.tr,
-          failedText: 'Failed'.tr,
-          messageText: 'Last updated at %T'.tr,
+    // EasyRefresh.defaultHeaderBuilder = () => ClassicHeader(
+    //       dragText: 'Pull to refresh'.tr,
+    //       armedText: 'Release ready'.tr,
+    //       readyText: 'Refreshing...'.tr,
+    //       processingText: 'Refreshing...'.tr,
+    //       processedText: 'Succeeded'.tr,
+    //       noMoreText: 'No more'.tr,
+    //       failedText: 'Failed'.tr,
+    //       messageText: 'Last updated at %T'.tr,
+    //     );
+    // EasyRefresh.defaultFooterBuilder = () => ClassicFooter(
+    //       dragText: 'Pull to load'.tr,
+    //       armedText: 'Release ready'.tr,
+    //       readyText: 'Loading...'.tr,
+    //       processingText: 'Loading...'.tr,
+    //       processedText: 'Succeeded'.tr,
+    //       noMoreText: 'No more'.tr,
+    //       failedText: 'Failed'.tr,
+    //       messageText: 'Last updated at %T'.tr,
+    //     );
+    EasyRefresh.defaultHeaderBuilder = () => const CupertinoHeader(
+          position: IndicatorPosition.locator,
+          safeArea: false,
         );
-    EasyRefresh.defaultFooterBuilder = () => ClassicFooter(
-          dragText: 'Pull to load'.tr,
-          armedText: 'Release ready'.tr,
-          readyText: 'Loading...'.tr,
-          processingText: 'Loading...'.tr,
-          processedText: 'Succeeded'.tr,
-          noMoreText: 'No more'.tr,
-          failedText: 'Failed'.tr,
-          messageText: 'Last updated at %T'.tr,
+    EasyRefresh.defaultFooterBuilder = () => const CupertinoFooter(
+          position: IndicatorPosition.locator,
         );
     WidgetsBinding.instance.addObserver(this);
     super.initState();

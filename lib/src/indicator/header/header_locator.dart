@@ -43,7 +43,7 @@ class HeaderLocator extends StatelessWidget {
           final axis = headerNotifier.axis!;
           final axisDirection = headerNotifier.axisDirection!;
           // Set safe area offset.
-          final safePadding = MediaQuery.of(context).padding;
+          final safePadding = MediaQuery.paddingOf(context);
           headerNotifier._safeOffset = axis == Axis.vertical
               ? axisDirection == AxisDirection.down
                   ? safePadding.top

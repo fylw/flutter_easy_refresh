@@ -15,7 +15,7 @@ class ClassicPage extends StatefulWidget {
 
 class _ClassicPageState extends State<ClassicPage> {
   late EasyRefreshController _controller;
-  int _count = 10;
+  int _count = 11;
   Axis _scrollDirection = Axis.vertical;
   int _expandedIndex = -1;
   final _CIProperties _headerProperties = _CIProperties(
@@ -99,6 +99,9 @@ class _ClassicPageState extends State<ClassicPage> {
                 if (!mounted) {
                   return;
                 }
+                _controller.finishLoad(_count >= 10
+                    ? IndicatorResult.noMore
+                    : IndicatorResult.success);
                 setState(() {
                   _count = 10;
                 });
@@ -115,7 +118,7 @@ class _ClassicPageState extends State<ClassicPage> {
                 setState(() {
                   _count += 5;
                 });
-                _controller.finishLoad(_count >= 20
+                _controller.finishLoad(_count >= 10
                     ? IndicatorResult.noMore
                     : IndicatorResult.success);
               },

@@ -46,6 +46,11 @@ class NestedScrollViewPageState extends State<NestedScrollViewPage>
         headerSliverBuilder: (context, innerBoxIsScrolled) {
           return <Widget>[
             SliverAppBar(
+              title:  Text(
+                'sssss',
+                style: TextStyle(
+                    color: Theme.of(context).textTheme.titleLarge?.color),
+              ),
               expandedHeight: 120,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
@@ -65,6 +70,7 @@ class NestedScrollViewPageState extends State<NestedScrollViewPage>
               controller: _tabController,
               labelColor: themeData.colorScheme.primary,
               indicatorColor: themeData.colorScheme.primary,
+              isScrollable: true,
               onTap: (index) {
                 setState(() {
                   _tabIndex = index;

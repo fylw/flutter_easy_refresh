@@ -43,7 +43,7 @@ class FooterLocator extends StatelessWidget {
           final axis = footerNotifier.axis!;
           final axisDirection = footerNotifier.axisDirection!;
           // Set safe area offset.
-          final safePadding = MediaQuery.of(context).padding;
+          final safePadding = MediaQuery.paddingOf(context);
           footerNotifier._safeOffset = axis == Axis.vertical
               ? axisDirection == AxisDirection.down
                   ? safePadding.bottom
